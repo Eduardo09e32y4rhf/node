@@ -12,14 +12,15 @@ import { METHODS } from 'node:http';
 
 export default function MovieList (){
     
-    const[movies, setmovies]= useState([]); 
-    const getMovies =() =>{
-      new Axios({
-        METHODS:'get';
-            url: "https://api.themoviedb.org/3/discover/movie";
+const TMDB_API_KEY = '174ac822eacf29a95798c149ea01c241';
+
+export const getMoviesFromDatabase = async () => {
+  const response = await axios.get(`https://api.themoviedb.org/3/discover/movie{174ac822eacf29a95798c149ea01c241}`);
+  return response.data.results;
+};
             
             params: {
-                api_key: "174ac822eacf29a95798c149ea01c241",
+
                 language: 'pt-br'
             }
         }).then( 'response' =>{
