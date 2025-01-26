@@ -2,13 +2,12 @@
 
 'use client';
 import { useState } from 'react';
+// movies.ts
 import axios from 'axios';
 
-console.log(axios.isCancel('something'));
+
+
 import './index.scss';
-import { METHODS } from 'node:http';
-
-
 
 export default function MovieList (){
     
