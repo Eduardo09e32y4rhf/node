@@ -1,1 +1,1 @@
-Projet de films e series sendo desevolvido. 
+project developed by Eduardo Silva, for educational purposes, responsive website developed in JS, with Type Script and SCSS with API's Prisma, SASS, NODE JS,AXIOS,project developed for films that is in beta stage.
