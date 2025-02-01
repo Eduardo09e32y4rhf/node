@@ -1,37 +1,46 @@
 
 
 'use client';
-import { useState } from 'react';
-import axios from 'axios';
-
-console.log(axios.isCancel('something'));
+import { useEffect, useState } from 'react';
+import axios,  from 'axios';
 import './index.scss';
-import { METHODS } from 'node:http';
+import { Movie } from '@/app/Types';
+
+
+
 
 
 
 export default function MovieList (){
     
-    const[movies, setmovies]= useState([]); 
-    const getMovies =() =>{
-      new Axios({
-        METHODS:'get';
-            url: "https://api.themoviedb.org/3/discover/movie";
-            
+    const [movies, setMovies]= useState<Movie []>([]); 
+
+useEffect(() =>{
+    getMovies();
+}, [])}
+
+const getMovies =() =>{
+       Axios({
+        method:'get',
+            url: 'https://api.themoviedb.org/3/discover/movie',
             params: {
-                api_key: "174ac822eacf29a95798c149ea01c241",
-                language: 'pt-br'
+                api_key:'174ac822eacf29a95798c149ea01c241',
+                language:'pt-br'
             }
-        }).then( 'response' =>{
-            console.log(response);
+        }).then( response =>{
+            console.log(response.data.results);
         })
-    }
+    
 
     getMovies();
     return (
 
         <ul className="movie-list">
-            <li></li>
+         {MovieList.map((movie)=>
+
+           
+
+         )}
         </ul>
     );
 }
