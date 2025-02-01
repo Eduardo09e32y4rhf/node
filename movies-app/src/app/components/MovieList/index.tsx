@@ -32,12 +32,15 @@ const getMovies =() =>{
         })
     
 
-    getMovies();
+   
     return (
 
         <ul className="movie-list">
          {MovieList.map((movie)=>
 
+           <MovieCard
+           key={movie.id}
+           movie = {movie}/>
            
 
          )}
